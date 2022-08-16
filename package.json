@@ -1,0 +1,19 @@
+{
+  "name": "wetopia-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mujahid Ali",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^10.4.0"
+  },
+  "dependencies": {
+    "cypress-xpath": "^2.0.1",
+    "get-ssl-certificate": "^2.3.3",
+    "typescript": "^4.7.4"
+  }
+}
