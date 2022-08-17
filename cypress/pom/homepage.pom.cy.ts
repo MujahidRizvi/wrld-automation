@@ -3,12 +3,29 @@ import { homeData } from "../fixtures/wrldData.cy";
 export class HomePage {
 
   private contactNavBtn = ('#side-nav > :nth-child(7)')
+  private emailTxt = ('.justify-center.pt-10 input')
   private joinusNavBtn = ('#side-nav > :nth-child(6)')
   private mirrorNavBtn = ('#side-nav > :nth-child(5)')
   private pctNavBtn = ('#side-nav > :nth-child(2)')
   private roadmapNavBtn = ('#side-nav > :nth-child(3)')
   private season1NavBtn = ('#side-nav > :nth-child(1)')
   private tokenomicsNavBtn = ('#side-nav > :nth-child(4)')
+
+  public clickAllBulletsInRigtNav() {
+
+    cy.get('#side-nav > div').each(function($ele){
+      cy.wait(homeData.wait3Sec)
+      cy.wrap($ele).click({ multiple: true })
+      
+    })
+
+   /* cy.get('#side-nav').each(function($ele){
+      cy.wait(homeData.wait3Sec)
+      cy.wrap($ele).find('> div').click({ multiple: true })
+      
+    })*/
+    return this;
+  }
 
   public clickcontactNavBtn() {
     cy.get(this.contactNavBtn).invoke('show').click({ force: true });
@@ -48,6 +65,14 @@ export class HomePage {
 
   public clicktokenomicsNavBtn() {
     cy.get(this.tokenomicsNavBtn).invoke('show').click({ force: true });
+    cy.wait(homeData.wait3Sec)
+    return this;
+  }
+
+  public enterEmailForSubscription() {
+    cy.get(this.emailTxt).invoke('show')
+   // cy.wait(homeData.wait3Sec)
+    cy.get(this.emailTxt).invoke('show').type('smar@test.com' , {force: true})
     cy.wait(homeData.wait3Sec)
     return this;
   }

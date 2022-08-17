@@ -19,10 +19,11 @@ describe('Wetopia Test Suite', function () {
     })
 
     it('should click Season 1 bullet from right navigation', function () {
-      hp.clickSeason1NavBtn()
+      hp.clickAllBulletsInRigtNav()
+      //hp.clickSeason1NavBtn()
     })
 
-    it('should click PCT bullet from right navigation', function () {
+   /* it('should click PCT bullet from right navigation', function () {
       hp.clickpctNavBtn()
     })
 
@@ -44,6 +45,10 @@ describe('Wetopia Test Suite', function () {
 
     it('should click Contact bullet from right navigation', function () {
       hp.clickcontactNavBtn()
+    })*/
+
+    it('should enter valid email address', function () {
+      hp.enterEmailForSubscription()
     })
 
   })
