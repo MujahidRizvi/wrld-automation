@@ -9,7 +9,7 @@ export let homeData = {
   waitLong: 30000,
   viewPortSize: {
     width: 1280,
-    height: 760,
+    height: 720,
   },
   invalidpType: "gold",
   screenName: "Chris Alex",

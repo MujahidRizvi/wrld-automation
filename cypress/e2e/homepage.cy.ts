@@ -2,9 +2,9 @@ import { HomePage } from "../pom/homepage.pom.cy";
 const hp = new HomePage();
 
 describe('Wetopia Test Suite', function () {
-
+  
   context('Access WRLD test data', () => {
-
+    
     this.beforeEach(function () {
 
       hp.setViewport()
@@ -19,6 +19,7 @@ describe('Wetopia Test Suite', function () {
     })
 
     it('should click Season 1 bullet from right navigation', function () {
+    
       hp.clickAllBulletsInRigtNav()
       //hp.clickSeason1NavBtn()
     })

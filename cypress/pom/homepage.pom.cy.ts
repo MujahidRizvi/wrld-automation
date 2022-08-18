@@ -15,10 +15,13 @@ export class HomePage {
 
     cy.get('#side-nav > div').each(function($ele){
       cy.wait(homeData.wait3Sec)
-      cy.wrap($ele).click({ multiple: true })
+      cy.wrap($ele).invoke('show').click()
       
     })
-
+   // cy.wait(homeData.wait3Sec)
+   cy.get(this.contactNavBtn).invoke('show').click({ force: true })
+    //cy.get(this.contactNavBtn).invoke('show').click({ force: true })
+    //cy.get('#side-nav').scrollTo('bottom')
    /* cy.get('#side-nav').each(function($ele){
       cy.wait(homeData.wait3Sec)
       cy.wrap($ele).find('> div').click({ multiple: true })
@@ -29,7 +32,7 @@ export class HomePage {
 
   public clickcontactNavBtn() {
     cy.get(this.contactNavBtn).invoke('show').click({ force: true });
-    cy.wait(homeData.wait3Sec)
+   // cy.wait(homeData.wait3Sec)
     return this;
   }
 
@@ -70,10 +73,10 @@ export class HomePage {
   }
 
   public enterEmailForSubscription() {
-    cy.get(this.emailTxt).invoke('show')
+   // cy.get(this.emailTxt).scrollIntoView()
    // cy.wait(homeData.wait3Sec)
-    cy.get(this.emailTxt).invoke('show').type('smar@test.com' , {force: true})
-    cy.wait(homeData.wait3Sec)
+    cy.get(this.emailTxt).type('smar@test.com', { force: true })
+    cy.wait(homeData.wait5Sec)
     return this;
   }
 
